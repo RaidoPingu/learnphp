@@ -21,6 +21,22 @@ class MetalBex extends box {
     }
 
 }
+
+trait HasSmell {
+    public $smell;
+    public function sniff(){
+        if($this->smell !=='bad'){
+            return 'Fine';
+        }
+        return 'bad';
+    }
+}
+
+
+class Animal {
+    use HasSmell;
+}
+
 $Metalbox1 = new Metalbox();
 var_dump($Metalbox1);
 
