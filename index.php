@@ -12,20 +12,17 @@ class box {
     }
 }
 
-$box1 = new box();
-$box1->with= 1;
-$box1->height = 2;
-$box1->lenght = 3;
-$box1-> material = 'wood';
+class MetalBex extends box {
+    public $material = 'Metal';
+    public $weight;
 
-var_dump($box1);
-$box2 = new box();
-$box2->with= 1;
-$box2->height = 2;
-$box2->lenght = 3;
-$box2-> material = 'wood';
+    public function volume(){
+        return $this->width * $this->lenght * $this-> height;
+    }
 
-var_dump($box2);
+}
+$Metalbox1 = new Metalbox();
+var_dump($Metalbox1);
 
 ?>
 
