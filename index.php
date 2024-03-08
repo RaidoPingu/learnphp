@@ -1,44 +1,40 @@
-
 <?php
 
-class box {
-    public $with;
-    public $height;
-    public $lenght;
-    public $material;
+// liubrary 
 
-    public function describe() {
-        echo '$with ' . $this->with . " heaight " . $this->height . ' lenght ' . $this->lenght;
-    }
-}
 
-class MetalBex extends box {
-    public $material = 'Metal';
-    public $weight;
+class Job {
+    public function task(Logger $logger){
+        $logger = new Consolelogger();
+        for($i =0; $i<10; $i++)
+            $logger -> log("Task done # $i");
 
-    public function volume(){
-        return $this->width * $this->lenght * $this-> height;
-    }
-
-}
-
-trait HasSmell {
-    public $smell;
-    public function sniff(){
-        if($this->smell !=='bad'){
-            return 'Fine';
         }
-        return 'bad';
+    }
+
+interface Logger {
+    public function log($message);
+    
+}
+
+
+class Consolelogger implements Logger {
+    public function log ($message){
+        echo $message . "\n"
     }
 }
 
-
-class Animal {
-    use HasSmell;
+//Usage code
+class NothingLogger{
+    public function log($message);
+    $file = fopen("log.txt", "a");
+    fwrite($file, $message . "\n");
+    fclose($file);
 }
 
-$Metalbox1 = new Metalbox();
-var_dump($Metalbox1);
+$job = new Job();
+$logger = new Consollogger;
+$job->task();
 
 ?>
 
