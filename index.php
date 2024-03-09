@@ -2,39 +2,29 @@
 
 // liubrary 
 
+class box {
+    public $size;
+    public static $number;
 
-class Job {
-    public function task(Logger $logger){
-        $logger = new Consolelogger();
-        for($i =0; $i<10; $i++)
-            $logger -> log("Task done # $i");
+    public static function getNumber(){
+        echo self::$number
 
-        }
+    }
+    public function getSize(){
+        echo $this->size .self::$number
     }
 
-interface Logger {
-    public function log($message);
     
 }
 
-
-class Consolelogger implements Logger {
-    public function log ($message){
-        echo $message . "\n"
-    }
-}
-
-//Usage code
-class NothingLogger{
-    public function log($message);
-    $file = fopen("log.txt", "a");
-    fwrite($file, $message . "\n");
-    fclose($file);
-}
-
-$job = new Job();
-$logger = new Consollogger;
-$job->task();
+$box1 = new box();
+$box1->size = 10;
+$box1::$number = 10;
+$box2=new box();
+$box2->size = 20;
+$box2::$number =20;
+var_dump($box1, $box2);
+var_dump($box1::$number, $box2::$number);
 
 ?>
 
