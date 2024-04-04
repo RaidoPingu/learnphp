@@ -3,14 +3,7 @@ $name = 'Raido';
 $fruits = ['apple', 'bannana', 'orange', 'kiwi', 'lemon', 'grape', 'waterme'];
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <?include 'partials/header.php';?>
     <h1>Hello World <?=$name?></h1>
     <p>Tere</p>
     <ul>
