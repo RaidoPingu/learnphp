@@ -1,4 +1,4 @@
- <?include 'partials/header.php';?>
+ <?include 'views/partials/header.php';?>
     
     <h1>Page 2</h1>
 

@@ -3,7 +3,7 @@ $name = 'Raido';
 $fruits = ['apple', 'bannana', 'orange', 'kiwi', 'lemon', 'grape', 'waterme'];
 
 ?>
-    <?include 'partials/header.php';?>
+    <?include 'views/partials/header.php';?>
     <h1>Hello World <?=$name?></h1>
     <p>Tere</p>
     <ul>
